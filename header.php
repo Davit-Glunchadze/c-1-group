@@ -46,6 +46,15 @@
 				);
 				?>
 			</nav><!-- #site-navigation -->
+			<div class="favorite-user">
+				<a href="#">
+					<img class="favorite" src="<?php echo get_template_directory_uri() . '/assets/images/favorite.png'?>" alt=""> 
+				</a>
+				<a href="#">
+					<img class="user" src="<?php echo get_template_directory_uri() . '/assets/images/user.png'?>" alt=""> 
+				</a>
+			</div>
+
 			<div class="humburger-menu">
 				<input type="checkbox" id="menu-checkbox">
 				<label for="menu-checkbox">
@@ -67,14 +76,7 @@
 					?>
 				</div>				
 			</div>
-			<div class="favorite-user">
-				<a href="#">
-					<img class="favorite" src="<?php echo get_template_directory_uri() . '/assets/images/favorite.png'?>" alt=""> 
-				</a>
-				<a href="#">
-					<img class="user" src="<?php echo get_template_directory_uri() . '/assets/images/user.png'?>" alt=""> 
-				</a>
-			</div>
+			
 		</div>
 		
 	</header><!-- #masthead -->
