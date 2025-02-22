@@ -1,0 +1,157 @@
+/* header -  start */
+
+.site-header {
+  background-color: black;
+}
+
+.container {
+  max-width: 1448px;
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  justify-content: space-between;
+  padding: 32px 0 375px;
+}
+
+.favorite-user {
+  display: flex;
+  align-items: center;
+  gap: 34px;
+  text-decoration: none;
+}
+
+.favorite-user a:focus,
+.favorite-user .favorite:focus,
+.favorite-user .user:focus {
+  outline: none;
+}
+
+.favorite:hover,
+.user:hover {
+  transform: scale(1.1);
+  transition: ease 0.3s;
+}
+
+.main-navigation {
+  max-width: 382px;
+}
+
+.main-navigation ul {
+  max-width: 382px;
+  justify-content: space-between;
+}
+
+.main-navigation ul li a {
+  font-family: "Open Sans", serif;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 27.24px;
+  letter-spacing: 0%;
+  color: #ffffff;
+  outline: none;
+}
+
+.main-navigation ul li a:hover,
+.main-navigation ul li a:focus {
+  transform: scale(1.1);
+  transition: ease 0.3s;
+  color: #6c6868;
+}
+
+/* burger menu */
+
+.menu-icon {
+  font-size: 40px;
+  color: lemonchiffon;
+  cursor: pointer;
+}
+
+.humburger-menu {
+  display: none;
+}
+
+#menu-checkbox {
+  display: none;
+}
+
+#menu-checkbox:checked ~ .sidebar {
+  left: 0;
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  left: -250px;
+  top: 0;
+  background-color: #666666;
+  width: 250px;
+  height: 100%;
+  transition: all ease 0.3s;
+}
+
+.sidebar ul {
+  margin: 0;
+  padding: 40px 20px;
+  list-style: none;
+  text-align: center;
+}
+
+.sidebar ul li a {
+  text-decoration: none;
+  font-family: "Open Sans", serif;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 60px;
+  color: lemonchiffon;
+  outline: none;
+  display: inline-block;
+}
+
+.sidebar ul li a:hover,
+.sidebar ul li a:focus {
+  transform: scale(1.1);
+  transition: ease 0.3s;
+  color: #000000;
+}
+
+.sidebar-logo {
+  margin: 80px auto 0;
+  width: 60px;
+}
+
+/* header -  end */
+
+@media screen and (max-width: 1023px) {
+  /* header */
+  .container {
+    padding: 20px 20px 300px;
+  }
+
+  .favorite-user {
+    gap: 20px;
+  }
+
+  .main-navigation ul li a {
+    font-size: 17px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  #site-navigation {
+    display: none;
+  }
+
+  .humburger-menu {
+    display: inline-block;
+  }
+
+  .favorite-user {
+    display: none;
+  }
+
+  .site-branding img {
+    width: 50px;
+  }
+}
