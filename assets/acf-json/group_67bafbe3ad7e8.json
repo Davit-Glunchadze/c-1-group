@@ -112,31 +112,6 @@
                     "layout": "horizontal"
                 },
                 {
-                    "key": "field_67bb2281fe3e4",
-                    "label": "button (copy)",
-                    "name": "button_copy",
-                    "aria-label": "",
-                    "type": "button_group",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "choices": {
-                        "Discover more": "Discover more",
-                        "Hot Deals": "Hot Deals",
-                        "Subscribe": "Subscribe"
-                    },
-                    "default_value": "",
-                    "return_format": "value",
-                    "allow_null": 0,
-                    "allow_in_bindings": 0,
-                    "layout": "horizontal"
-                },
-                {
                     "key": "field_67bb06ffd17fa",
                     "label": "hero_button_link",
                     "name": "hero_button_link",
@@ -175,5 +150,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1740317329
+    "modified": 1740317916
 }
