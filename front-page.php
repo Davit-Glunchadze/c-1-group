@@ -20,10 +20,12 @@ get_header();
 
 
 <main class="home-page">
-    <!--FIRST SECTION-->
+        <!--FIRST SECTION-->
     <section class="hero-section-1">
-        <?php if(!empty($hero_section_image['url']) && !empty($hero_section_image['alt']) ) :?>
+        <?php if($hero_section_image) :?>
+        <div class="hero-section-photo">
             <img src=" <?php echo esc_url($hero_section_image['url']) ?>" alt="<?php echo esc_url($hero_section_image['alt'])?>">
+        </div> 
         <?php endif; ?>
         <div class="hero-content">
                 <h1 class="hero-title"><?php echo $hero_title; ?></h1>
@@ -31,6 +33,35 @@ get_header();
             <?php if($hero_button_link):?>
                 <a class="hero-button" href="<?php echo $hero_button_link; ?>"><?php echo $hero_button; ?></a>
             <?php endif; ?>
+        </div>
+    </section>
+        <!--SECOND SECTION-->
+    <section class="section-2">
+        <div class="second-section-title">
+            <a href=""><h3>Our Service</h3></a>
+        </div>
+        <div class="second-section-cards">
+            <a href="#">
+                <div class="second-section-card">
+                    <img src="<?php echo get_template_directory_uri() . "/assets/images/ticket-logo.png" ?>" alt="">
+                    <h4>Ticket Booking</h4>
+                    <p>We book all kind of national or international ticket for your destinaion.</p>
+                </div>
+            </a>
+            <a href="#">
+                <div class="second-section-card">
+                    <img src="<?php echo get_template_directory_uri() . "/assets/images/ticket-logo.png" ?>" alt="">
+                    <h4>Ticket Booking</h4>
+                    <p>We book all kind of national or international ticket for your destinaion.</p>
+                </div>
+            </a>
+            <a href="#">
+                <div class="second-section-card">
+                    <img src="<?php echo get_template_directory_uri() . "/assets/images/ticket-logo.png" ?>" alt="">
+                    <h4>Ticket Booking</h4>
+                    <p>We book all kind of national or international ticket for your destinaion.</p>
+                </div>
+            </a>
         </div>
     </section>
 </main>
