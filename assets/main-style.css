@@ -68,6 +68,7 @@
 .main-navigation ul li a:focus {
   transform: scale(1.1);
   transition: ease 0.3s;
+  color: #84829A;
 }
 
 /* burger menu */
@@ -95,10 +96,10 @@
   flex-direction: column;
   align-items: center;
   position: fixed;
-  left: -250px;
+  left: -200px;
   top: 0;
   background-color: #666666;
-  width: 250px;
+  width: 200px;
   height: 100%;
   transition: all ease 0.3s;
 }
@@ -136,19 +137,43 @@
 /* hero-section-1 */
 
 .hero-section-1 {
-  height: 100%;
+  width: 100%;
   position: relative;
 }
 
-.hero-section-1 > img {
+.hero-section-photo > img {
   width: 100%;
   height: 100%;
+  display: block;
   object-fit: cover;
+  margin-bottom: 72px;
+}
+
+.hero-section-photo {
+  position: relative;
+  width: 100%;
+}
+
+.hero-section-photo::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.81) 0%,
+    rgba(72, 72, 72, 0) 31.25%,
+    rgba(158, 158, 158, 0) 90%,
+    #ffffff 100%
+  );
+  pointer-events: none; /* რომ ზემოდან არაფერი დაბლოკოს */
 }
 
 .hero-content {
   position: absolute;
-  top: 60%;
+  top: 55%;
   left: 50%;
   transform: translate(-50%, -50%);
   display: flex;
@@ -196,6 +221,79 @@
 .hero-button:hover {
   transform: scale(1.1);
   transition: ease 0.3s;
+}
+
+/*  Second section  */
+
+.section-2 {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.second-section-title {
+  font-family: "Open Sans", serif;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 54.47px;
+  text-align: center;
+  margin-bottom: 63px;
+}
+
+.second-section-title a h3{
+  color: #000000;
+}
+
+.second-section-title a,
+.second-section-cards a {
+  text-decoration: none;
+}
+
+.second-section-title a h3:hover {
+  color: #84829A;
+  transform: scale(1.1);
+  transition: ease 0.3s;
+}
+
+.second-section-cards {
+  width: 1438px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 88px;
+}
+
+.second-section-card {
+  max-width: 416px;
+  border-radius: 15px;
+  background-color: #f9f9f9;
+  padding: 44px 50px 20px 38px;
+
+}
+.second-section-card:hover{
+  transform: scale(1.1);
+  transition: ease 0.3s;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+}
+
+.second-section-card h4 {
+  font-family: "Open Sans", serif;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 32.68px;
+  text-align: left;
+  color: #000000;
+  margin: 45px 0 19px;
+}
+
+.second-section-card p {
+  font-family: "Open Sans", serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 21.79px;
+  text-align: left;
+  color: #000000;
 }
 
 @media screen and (max-width: 1023px) {
@@ -261,7 +359,7 @@
   }
 
   .hero-title {
-    font-size: 25px;
+    font-size: 30px;
     line-height: 40px;
     margin: 0 0 15px;
   }
@@ -279,7 +377,26 @@
   }
 }
 
-@media screen and (max-width: 424px) {
+@media screen and (max-width: 500px) {
+  /*header*/
+
+  .favorite {
+    width: 25px;
+  }
+
+  .user {
+    width: 25px;
+  }
+
+  .menu-icon {
+    font-size: 30px;
+  }
+
+  .site-branding img {
+    width: 40px;
+  }
+
+  /*hero  section 1*/
   .hero-content {
     width: 300px;
   }
