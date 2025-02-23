@@ -28,7 +28,7 @@
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'c-1-group' ); ?></a>
 
-	<header id="masthead" class="site-header">
+	<header id="masthead" class="site-header" <?php echo is_user_logged_in() ? 'logged-in' : '' ?>>
 		<div class="container">
 			<div class="site-branding">
 				<?php
