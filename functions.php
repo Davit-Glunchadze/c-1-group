@@ -178,3 +178,23 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 }
 
 wp_enqueue_style('main-style', get_template_directory_uri() .  "/assets/main-style.css");
+
+// ACF  ფილდების გადმოტანა
+
+function my_acf_json_save_point( $path ) {
+    // შენახვის გზა
+    $path = get_stylesheet_directory() . '/assets/acf-json';
+    return $path;
+}
+add_filter('acf/settings/save_json', 'my_acf_json_save_point');
+
+function my_acf_json_load_point( $paths ) {
+    // წაშლის 
+    unset($paths[0]);
+
+    //ახალი გზა
+    $paths[] = get_stylesheet_directory() . '/acf-json';
+    return $paths;
+}
+add_filter('acf/settings/load_json', 'my_acf_json_load_point');
+

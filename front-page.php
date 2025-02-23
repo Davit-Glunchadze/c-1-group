@@ -7,6 +7,7 @@ $hero_title = $section_1['hero_title'];
 $hero_text = $section_1['hero_text'];
 $hero_button = $section_1['hero_button'];
 $hero_button_link = $section_1['hero_button_link'];
+$button_copy = $section_1['button_copy'];
 
 //echo '<pre>';
 //print_r ($section_1);
@@ -30,6 +31,7 @@ get_header();
                 <p class="hero-text"><?php echo $hero_text; ?> </p>
             <?php if($hero_button_link):?>
                 <a class="hero-button" href="<?php echo $hero_button_link; ?>"><?php echo $hero_button; ?></a>
+                <a class="hero-button" href="<?php echo $hero_button_link; ?>"><?php echo $button_copy; ?></a>
             <?php endif; ?>
         </div>
     </section>
