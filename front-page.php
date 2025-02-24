@@ -8,8 +8,13 @@ $hero_text = $section_1['hero_text'];
 $hero_button = $section_1['hero_button'];
 $hero_button_link = $section_1['hero_button_link'];
 
+$services = get_field('2_section');
+$service_title = $services['second_section_title'];
+$service_title_link = $services['second_section_title_link'];
+$service_card_id = $services['services'];
+
 //echo '<pre>';
-//print_r ($section_1);
+//print_r ($service_card_id);
 //echo '</pre>';
 ?>
 
@@ -38,30 +43,18 @@ get_header();
         <!--SECOND SECTION-->
     <section class="section-2">
         <div class="second-section-title">
-            <a href=""><h3>Our Service</h3></a>
+            <a href="<?php echo $service_title_link; ?>"><h3><?php echo $service_title; ?></h3></a>
         </div>
         <div class="second-section-cards">
-            <a href="#">
-                <div class="second-section-card">
-                    <img src="<?php echo get_template_directory_uri() . "/assets/images/ticket-logo.png" ?>" alt="">
-                    <h4>Ticket Booking</h4>
-                    <p>We book all kind of national or international ticket for your destinaion.</p>
-                </div>
-            </a>
-            <a href="#">
-                <div class="second-section-card">
-                    <img src="<?php echo get_template_directory_uri() . "/assets/images/ticket-logo.png" ?>" alt="">
-                    <h4>Ticket Booking</h4>
-                    <p>We book all kind of national or international ticket for your destinaion.</p>
-                </div>
-            </a>
-            <a href="#">
-                <div class="second-section-card">
-                    <img src="<?php echo get_template_directory_uri() . "/assets/images/ticket-logo.png" ?>" alt="">
-                    <h4>Ticket Booking</h4>
-                    <p>We book all kind of national or international ticket for your destinaion.</p>
-                </div>
-            </a>
+            <?php foreach($service_card_id as $service_card) : ?>
+                <a href="<?php echo get_the_permalink($service_card); ?>">
+                    <div class="second-section-card">
+                        <img src="<?php echo get_the_post_thumbnail_url($service_card); ?>" alt="<?php echo esc_attr(get_post_meta(get_post_thumbnail_id($service_card), '_wp_attachment_image_alt', true));; ?>">
+                        <h4><?php echo get_the_title($service_card); ?></h4>
+                        <p><?php echo get_the_excerpt($service_card); ?></p>
+                    </div>
+                </a>
+            <?php endforeach; ?>
         </div>
     </section>
 </main>
