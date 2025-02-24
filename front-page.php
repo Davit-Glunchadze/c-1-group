@@ -57,6 +57,54 @@ get_header();
             <?php endforeach; ?>
         </div>
     </section>
+    
+
+    <section class="section-4">
+        <div class="image-box">
+            <img src="<?php echo get_stylesheet_directory_uri() . '/assets/images/world_map.png'; ?>" alt="photo">
+        </div>
+        <div class="section-4-content">
+            <div class="section-4-text">
+                <h2 class="section-4-title">We always try to give you the best service</h2>
+                <h3 class="section-4-subtitle">We always try to make our customer Happy. We provide all kind of facilities. Your Satisfaction is our main priority.</h3> 
+            </div>
+            <div class="cards">
+                <div class="mysection-card">
+                    <div class="mysection-content">
+                        <img src="<?php echo get_stylesheet_directory_uri() . '/assets/images/simple-line-icons_calender.png'; ?>" alt="photo">
+                        <h2 class="mysection-card-title">15k+</h2>
+                        <h3 class="mysection-card-subtitle">Years of Experience</h3>
+                    </div>
+                </div>
+                <div class="mysection-card">
+                    <div class="mysection-content">
+                        <img src="<?php echo get_stylesheet_directory_uri() . '/assets/images/simple-line-icons_calender.png'; ?>" alt="photo">
+                        <h2 class="mysection-card-title">15k+</h2>
+                        <h3 class="mysection-card-subtitle">Years of Experience</h3>
+                    </div>
+                </div>
+                <div class="mysection-card">
+                    <div class="mysection-content">
+                        <img src="<?php echo get_stylesheet_directory_uri() . '/assets/images/simple-line-icons_calender.png'; ?>" alt="photo">
+                        <h2 class="mysection-card-title">15k+</h2>
+                        <h3 class="mysection-card-subtitle">Years of Experience</h3>
+                    </div>
+                </div>
+                <div class="mysection-card">
+                    <div class="mysection-content">
+                        <img src="<?php echo get_stylesheet_directory_uri() . '/assets/images/simple-line-icons_calender.png'; ?>" alt="photo">
+                        <h2 class="mysection-card-title">15k+</h2>
+                        <h3 class="mysection-card-subtitle">Years of Experience</h3>
+                    </div>
+                </div>
+            </div>
+            
+            
+        </div>
+    </section>
+                    
+
+
 </main>
 
 <?php get_footer(); ?>
