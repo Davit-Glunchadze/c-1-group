@@ -22,7 +22,7 @@
   align-items: center;
   margin: 0 auto;
   justify-content: space-between;
-  padding: 32px 0 20px;
+  padding: 32px 0 10px;
 }
 
 .favorite-user {
@@ -257,9 +257,13 @@
 }
 
 .second-section-cards {
+  max-width: 1438px;
+  margin: 0 auto;
+
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 232px;
+  grid-auto-rows: 232px;
+  align-items: center;
   gap: 95px;
   padding-bottom: 88px;
 }
@@ -514,113 +518,4 @@
     margin: 0 20px;
   }
 }
-
-.section-4 {
-  width: 100%;
-  height: 100vh;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 0 auto;
-  background-color: #0058530d;
-  margin-bottom: 72px;
-}
-
-.image-box {
-  margin-top: 60px;
-}
-
-.section-4-content {
-  position: absolute;
-  top: 81px;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  max-width: 1400px;
-}
-
-.section-4-text {
-  max-width: 518px;
-  text-align: center;
-}
-
-.section-4-title {
-  font-family: "Open Sans", serif;
-  font-weight: 700;
-  font-size: 40px;
-  line-height: 54.47px;
-  text-align: center;
-  color: #000000;
-  margin: 0;
-  margin-bottom: 19px;
-}
-
-.section-4-subtitle {
-  font-family: "Open Sans", serif;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 21.79px;
-  text-align: center;
-  color: #000000;
-  margin: 0;
-  margin-bottom: 118px;
-}
-
-.mysection-card {
-  max-width: 250px;
-  border-radius: 15px;
-  background-color: #ffffff;
-  display: flex;
-}
-
-.mysection-content {
-  max-width: 103px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 43px 73px 22px;
-}
-
-.mysection-card-title {
-  font-family: "Open Sans", serif;
-  font-weight: 700;
-  font-size: 36px;
-  line-height: 49.03px;
-  text-align: center;
-  color: #000000;
-  margin: 0;
-  margin-bottom: 30px;
-}
-
-.mysection-card-subtitle {
-  font-family: "Open Sans", serif;
-  font-weight: 400;
-  font-size: 20px;
-  line-height: 27.24px;
-  text-align: center;
-  color: #000000;
-  margin: 0;
-}
-
-.mysection-card img {
-  width: 42px;
-  height: 42px;
-  margin-bottom: 29px;
-}
-
-.image-box img {
-  padding-bottom: 52px;
-}
-
-.cards {
-  max-width: 1400px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 100px;
-  justify-content: center;
-}
-
 
