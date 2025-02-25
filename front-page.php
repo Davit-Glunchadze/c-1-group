@@ -13,14 +13,15 @@ $service_title = $services['second_section_title'];
 $service_title_link = $services['second_section_title_link'];
 $service_card_id = $services['services'];
 
-$section_5 = get_field('5_section');
-$section_5_title = $section_5('5_section_title');
-//$section_title_link = $section_5('5_section_title_link');
+$section_five = get_field('5_section');
+$five_section_title = $section_five['five_section_title'];
+$section_title_link = $section_five['five_section_title_link'];
+$five_section_buttons = $section_five['five_section_buttons'];
 
 
-echo '<pre>';
-print_r ($section_5);
-echo '</pre>';
+//echo '<pre>';
+//print_r ($five_section_buttons);
+//echo '</pre>';
 ?>
 
 
@@ -64,30 +65,7 @@ get_header();
             <?php endforeach; ?>
         </div>
     </section>
-
-    <section class="section-2 section-5">
-        <div id="fifth-section" class="second-section-title">
-            <a href="<?php echo $section_title_link; ?>"><h3><?php echo $section_5_title; ?></h3></a>
-        </div>
-
-        <div class="second-section-cards">
-            <?php foreach($service_card_id as $service_card) : ?>
-                <?php if ($service_card):?>
-                <a href="<?php echo get_the_permalink($service_card); ?>">
-                    <div class="second-section-card">
-                        <img src="<?php echo get_the_post_thumbnail_url($service_card); ?>" alt="<?php echo esc_attr(get_post_meta(get_post_thumbnail_id($service_card), '_wp_attachment_image_alt', true));; ?>">
-                        <h4><?php echo get_the_title($service_card); ?></h4>
-                        <p><?php echo get_the_excerpt($service_card); ?></p>
-                    </div>
-                </a>
-                <?php endif; ?>
-            <?php endforeach; ?>
-        </div>
-    </section>
-
-    
-                    
-
+       
 
 </main>
 
