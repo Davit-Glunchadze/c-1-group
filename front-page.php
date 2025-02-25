@@ -13,9 +13,14 @@ $service_title = $services['second_section_title'];
 $service_title_link = $services['second_section_title_link'];
 $service_card_id = $services['services'];
 
-//echo '<pre>';
-//print_r ($service_card_id);
-//echo '</pre>';
+$section_5 = get_field('5_section');
+$section_5_title = $section_5('5_section_title');
+//$section_title_link = $section_5('5_section_title_link');
+
+
+echo '<pre>';
+print_r ($section_5);
+echo '</pre>';
 ?>
 
 
@@ -42,11 +47,12 @@ get_header();
     </section>
         <!--SECOND SECTION-->
     <section class="section-2">
-        <div class="second-section-title">
+        <div id="second-section" class="second-section-title">
             <a href="<?php echo $service_title_link; ?>"><h3><?php echo $service_title; ?></h3></a>
         </div>
         <div class="second-section-cards">
             <?php foreach($service_card_id as $service_card) : ?>
+                <?php if ($service_card):?>
                 <a href="<?php echo get_the_permalink($service_card); ?>">
                     <div class="second-section-card">
                         <img src="<?php echo get_the_post_thumbnail_url($service_card); ?>" alt="<?php echo esc_attr(get_post_meta(get_post_thumbnail_id($service_card), '_wp_attachment_image_alt', true));; ?>">
@@ -54,54 +60,32 @@ get_header();
                         <p><?php echo get_the_excerpt($service_card); ?></p>
                     </div>
                 </a>
+                <?php endif; ?>
             <?php endforeach; ?>
         </div>
     </section>
-    
 
-    <section class="section-4">
-        <div class="image-box">
-            <img src="<?php echo get_stylesheet_directory_uri() . '/assets/images/world_map.png'; ?>" alt="photo">
+    <section class="section-2 section-5">
+        <div id="fifth-section" class="second-section-title">
+            <a href="<?php echo $section_title_link; ?>"><h3><?php echo $section_5_title; ?></h3></a>
         </div>
-        <div class="section-4-content">
-            <div class="section-4-text">
-                <h2 class="section-4-title">We always try to give you the best service</h2>
-                <h3 class="section-4-subtitle">We always try to make our customer Happy. We provide all kind of facilities. Your Satisfaction is our main priority.</h3> 
-            </div>
-            <div class="cards">
-                <div class="mysection-card">
-                    <div class="mysection-content">
-                        <img src="<?php echo get_stylesheet_directory_uri() . '/assets/images/simple-line-icons_calender.png'; ?>" alt="photo">
-                        <h2 class="mysection-card-title">15k+</h2>
-                        <h3 class="mysection-card-subtitle">Years of Experience</h3>
+
+        <div class="second-section-cards">
+            <?php foreach($service_card_id as $service_card) : ?>
+                <?php if ($service_card):?>
+                <a href="<?php echo get_the_permalink($service_card); ?>">
+                    <div class="second-section-card">
+                        <img src="<?php echo get_the_post_thumbnail_url($service_card); ?>" alt="<?php echo esc_attr(get_post_meta(get_post_thumbnail_id($service_card), '_wp_attachment_image_alt', true));; ?>">
+                        <h4><?php echo get_the_title($service_card); ?></h4>
+                        <p><?php echo get_the_excerpt($service_card); ?></p>
                     </div>
-                </div>
-                <div class="mysection-card">
-                    <div class="mysection-content">
-                        <img src="<?php echo get_stylesheet_directory_uri() . '/assets/images/simple-line-icons_calender.png'; ?>" alt="photo">
-                        <h2 class="mysection-card-title">15k+</h2>
-                        <h3 class="mysection-card-subtitle">Years of Experience</h3>
-                    </div>
-                </div>
-                <div class="mysection-card">
-                    <div class="mysection-content">
-                        <img src="<?php echo get_stylesheet_directory_uri() . '/assets/images/simple-line-icons_calender.png'; ?>" alt="photo">
-                        <h2 class="mysection-card-title">15k+</h2>
-                        <h3 class="mysection-card-subtitle">Years of Experience</h3>
-                    </div>
-                </div>
-                <div class="mysection-card">
-                    <div class="mysection-content">
-                        <img src="<?php echo get_stylesheet_directory_uri() . '/assets/images/simple-line-icons_calender.png'; ?>" alt="photo">
-                        <h2 class="mysection-card-title">15k+</h2>
-                        <h3 class="mysection-card-subtitle">Years of Experience</h3>
-                    </div>
-                </div>
-            </div>
-            
-            
+                </a>
+                <?php endif; ?>
+            <?php endforeach; ?>
         </div>
     </section>
+
+    
                     
 
 
