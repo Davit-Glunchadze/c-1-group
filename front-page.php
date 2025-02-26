@@ -13,11 +13,6 @@ $service_title = $services['second_section_title'];
 $service_title_link = $services['second_section_title_link'];
 $service_card_id = $services['services'];
 
-$section_five = get_field('5_section');
-$five_section_title = $section_five['five_section_title'];
-$section_title_link = $section_five['five_section_title_link'];
-$five_section_buttons = $section_five['five_section_buttons'];
-
 
 //echo '<pre>';
 //print_r ($five_section_buttons);
