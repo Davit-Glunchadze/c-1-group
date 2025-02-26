@@ -9,7 +9,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package C-1-group
+ * @package mysection
  */
 
 get_header();

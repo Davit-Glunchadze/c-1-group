@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package C-1-group
+ * @package mysection
  */
 
 if ( ! is_active_sidebar( 'sidebar-1' ) ) {

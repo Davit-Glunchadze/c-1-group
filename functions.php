@@ -1,10 +1,10 @@
 <?php
 /**
- * C-1-group functions and definitions
+ * mysection functions and definitions
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
- * @package C-1-group
+ * @package mysection
  */
 
 if ( ! defined( '_S_VERSION' ) ) {
@@ -19,14 +19,14 @@ if ( ! defined( '_S_VERSION' ) ) {
  * runs before the init hook. The init hook is too late for some features, such
  * as indicating support for post thumbnails.
  */
-function c_1_group_setup() {
+function mysection_setup() {
 	/*
 		* Make theme available for translation.
 		* Translations can be filed in the /languages/ directory.
-		* If you're building a theme based on C-1-group, use a find and replace
-		* to change 'c-1-group' to the name of your theme in all the template files.
+		* If you're building a theme based on mysection, use a find and replace
+		* to change 'mysection' to the name of your theme in all the template files.
 		*/
-	load_theme_textdomain( 'c-1-group', get_template_directory() . '/languages' );
+	load_theme_textdomain( 'mysection', get_template_directory() . '/languages' );
 
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
@@ -49,8 +49,7 @@ function c_1_group_setup() {
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus(
 		array(
-			'menu-1' => esc_html__( 'Primary', 'c-1-group' ),
-			'menu-2' => esc_html__( 'Secondary', 'c-1-group' )
+			'menu-1' => esc_html__( 'Primary', 'mysection' ),
 		)
 	);
 
@@ -75,7 +74,7 @@ function c_1_group_setup() {
 	add_theme_support(
 		'custom-background',
 		apply_filters(
-			'c_1_group_custom_background_args',
+			'mysection_custom_background_args',
 			array(
 				'default-color' => 'ffffff',
 				'default-image' => '',
@@ -101,7 +100,7 @@ function c_1_group_setup() {
 		)
 	);
 }
-add_action( 'after_setup_theme', 'c_1_group_setup' );
+add_action( 'after_setup_theme', 'mysection_setup' );
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
@@ -110,22 +109,22 @@ add_action( 'after_setup_theme', 'c_1_group_setup' );
  *
  * @global int $content_width
  */
-function c_1_group_content_width() {
-	$GLOBALS['content_width'] = apply_filters( 'c_1_group_content_width', 640 );
+function mysection_content_width() {
+	$GLOBALS['content_width'] = apply_filters( 'mysection_content_width', 640 );
 }
-add_action( 'after_setup_theme', 'c_1_group_content_width', 0 );
+add_action( 'after_setup_theme', 'mysection_content_width', 0 );
 
 /**
  * Register widget area.
  *
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
-function c_1_group_widgets_init() {
+function mysection_widgets_init() {
 	register_sidebar(
 		array(
-			'name'          => esc_html__( 'Sidebar', 'c-1-group' ),
+			'name'          => esc_html__( 'Sidebar', 'mysection' ),
 			'id'            => 'sidebar-1',
-			'description'   => esc_html__( 'Add widgets here.', 'c-1-group' ),
+			'description'   => esc_html__( 'Add widgets here.', 'mysection' ),
 			'before_widget' => '<section id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</section>',
 			'before_title'  => '<h2 class="widget-title">',
@@ -133,22 +132,22 @@ function c_1_group_widgets_init() {
 		)
 	);
 }
-add_action( 'widgets_init', 'c_1_group_widgets_init' );
+add_action( 'widgets_init', 'mysection_widgets_init' );
 
 /**
  * Enqueue scripts and styles.
  */
-function c_1_group_scripts() {
-	wp_enqueue_style( 'c-1-group-style', get_stylesheet_uri(), array(), _S_VERSION );
-	wp_style_add_data( 'c-1-group-style', 'rtl', 'replace' );
+function mysection_scripts() {
+	wp_enqueue_style( 'mysection-style', get_stylesheet_uri(), array(), _S_VERSION );
+	wp_style_add_data( 'mysection-style', 'rtl', 'replace' );
 
-	wp_enqueue_script( 'c-1-group-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
+	wp_enqueue_script( 'mysection-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
-add_action( 'wp_enqueue_scripts', 'c_1_group_scripts' );
+add_action( 'wp_enqueue_scripts', 'mysection_scripts' );
 
 /**
  * Implement the Custom Header feature.
@@ -177,4 +176,4 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
-wp_enqueue_style('main-style', get_template_directory_uri() .  "/assets/main-style.css")
+wp_enqueue_style('main-style', get_template_directory_uri() . "/assets/main-style.css");
