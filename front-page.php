@@ -13,6 +13,20 @@ $service_title = $services['second_section_title'];
 $service_title_link = $services['second_section_title_link'];
 $service_card_id = $services['services'];
 
+//  sabas ცვლადები
+$packages_section = get_field('packages_section');
+$cards = $packages_section['cards'];
+
+$packages_title = !empty($packages_section) && isset($packages_section['packages_title']) ? $packages_section['packages_title'] : '';
+$fast_offers = !empty($packages_section) && isset($packages_section['fast_offers']) ? $packages_section['fast_offers'] : [];
+$image = !empty($cards) && isset($cards['location_image']) ? $cards['location_image'] : '';
+$trip_duration = !empty($cards) && isset($cards['trip_duration']) ? $cards['trip_duration'] : '';
+$trip_price = !empty($cards) && isset($cards['trip_price']) ? $cards['trip_price'] : '';
+$trip_description = !empty($cards) && isset($cards['trip_description']) ? $cards['trip_description'] : '';
+$location = !empty($cards) && isset($cards['trip_location']) ? $cards['trip_location'] : '';
+$know = !empty($cards) && isset($cards['know_more']) ? $cards['know_more'] : '';
+$discover_more = !empty($packages_section) && isset($packages_section['discover_more_link']) ? $packages_section['discover_more_link'] : '';
+
 
 //echo '<pre>';
 //print_r ($five_section_buttons);
@@ -61,6 +75,60 @@ get_header();
         </div>
     </section>
        
+    <!-- PACKAGES SECTION -->
+<section class="packages-section">
+
+<h1><?php echo $packages_title ?></h1>
+
+
+
+<div class="card-links">
+
+    <a href="<?php echo $fast_offers['button_1_link']?>"><?php echo $fast_offers['button_1_text']?></a>
+    <a href="<?php echo $fast_offers['button_2_link']?>"><?php echo $fast_offers['button_2_text']?></a>
+    <a href="<?php echo $fast_offers['button_3_link']?>"><?php echo $fast_offers['button_3_text']?></a>
+    <a href="<?php echo $fast_offers['button_4_link']?>"><?php echo $fast_offers['button_4_text']?></a>
+    <a href="<?php echo $fast_offers['button_5_link']?>"><?php echo $fast_offers['button_5_text']?></a>
+    <a href="<?php echo $fast_offers['button_6_link']?>"><?php echo $fast_offers['button_6_text']?></a>
+    
+</div>
+
+
+        
+<div class="cards">
+<?php foreach ($cards as $card) : ?>
+    <div class="card">
+        
+            <img src="<?php echo $card['location_image']?>" alt="">
+
+        <div class="card-text">
+            <h3><?php echo $card['trip_duration']?></h3>
+            <h3><?php echo $card['trip_price']?></h3>
+        </div>
+
+        <p><?php echo $card['trip_description']?></p>
+
+        <div class="location-seemore">
+
+            <div class="location">
+            <a href="./components/indonesia/indonesiaPage.php" class="marker"><img src="<?php echo get_template_directory_uri() . '/assets/images/ep_location.png'?>" alt=""></a>
+            <p> <?php echo $card['trip_location'] ?></p>
+            </div>
+            <a href="<?php echo $card['know_more'] ?>" class="see-more"> Know More </a>
+        </div>
+        
+    </div>
+<?php endforeach ; ?>
+</div>
+
+
+
+<div class="discover-class">
+<a href="<?php echo $discover_more ?>"> Discover More </a>
+</div>
+
+</section>
+
 
 </main>
 
